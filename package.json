@@ -1,0 +1,22 @@
+{
+  "name": "lui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "cypress": "cypress open",
+    "checkbox": "parcel ./examples/components/form/checkbox/index.html"
+  },
+  "author": "",
+  "license": "MIT",
+  "alias": {
+    "lesta": {
+      "global": "lesta"
+    }
+  },
+  "devDependencies": {
+    "parcel": "^2.11.0",
+    "cypress": "^13.6.3"
+  }
+}

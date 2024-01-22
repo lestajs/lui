@@ -1,0 +1,23 @@
+button.lstInfoBtn {
+    height: 1.2em;
+    width: 1.2em;
+    text-align: center;
+    border-radius: 3em;
+    background-color: var(--gray700);
+    color: white;
+    translate: 0.5em -0.2em;
+    justify-content: center;
+    font-size: var(--fs-xxs);
+}
+.lstInfoTxt {
+    top: var(--xs);
+    margin: 0 auto;
+    background-color: var(--gray700);
+    color: white;
+    white-space: pre-line;
+    min-width: 320px;
+    padding: var(--xs);
+    border: 0;
+    border-radius: 6px;
+    z-index: 10;
+}

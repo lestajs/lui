@@ -1,0 +1,44 @@
+button.lstNst {
+    padding: .12em;
+    min-width: 10ch;
+    width: fit-content;
+    gap: 0;
+    border: 1px solid var(--gray200);
+    background-color: var(--white100);
+    position: relative;
+}
+button.lstNst.lstSpinner:before {
+    width: 1.2em;
+    height: 1.2em;
+    right: .4em;
+}
+.lstNst.lstSpinner:after {
+    content: '\200B';
+}
+.lstNst.lstNstErr {
+    border-color: var(--red);
+}
+.lstNst > div {
+    padding: 0 .2em;
+    height: 100%;
+}
+.lstNst > div:not(:last-child):after {
+    content: "|";
+    margin-left: .4em;
+}
+.lstNst:after {
+    content: "…";
+    margin-left: auto;
+    width: 1.3em;
+    text-align: right;
+}
+.lstNstMultiple {
+    display: flex;
+    flex-wrap: wrap;
+}
+.lstNstMultiple:after {
+    content: "…"attr(length);
+    display: block;
+    margin-left: auto;
+    padding: 0 .4em 0 .2em;
+}

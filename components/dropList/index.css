@@ -1,0 +1,20 @@
+.lstDrpList {
+    display: flex;
+    gap: 2px;
+}
+.lstDrpList .lstDrpLi {
+    display: grid;
+    width: 100%;
+}
+.lstDrpList .lstDrpLiTxt {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: left;
+}
+.lstDrpList .LstClose {
+    background-color: #777777;
+}
+.lstDrpLi.selected {
+    opacity: 0.6;
+}

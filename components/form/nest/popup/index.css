@@ -1,0 +1,54 @@
+.lstPopupNav {
+    margin-left: var(--xxs);
+}
+
+.lstPopupNav .lstBtns {
+    gap: 0;
+}
+
+.lstPopupNav .lstBtns button {
+    padding: 0.5em;
+    color: var(--gray400);
+}
+
+.lstPopupNav .lstBtns button:hover {
+    color: var(--gray700);
+    font-weight: bold;
+}
+
+.lstPopupNav .lstBtns .l-active {
+    color: var(--gray700);
+}
+.lstUI .lstPopupList {
+    margin-top: var(--xs);
+}
+
+.lstPopupList li {
+    cursor: pointer;
+    text-transform: capitalize;
+    padding: .5em;
+    line-height: 1.2;
+}
+.lstPopupList li.l-active {
+    background-color: var(--gray100);
+}
+
+.lstPopupResult {
+    margin: var(--xs) 0 var(--xs);
+    border-top: 1px solid var(--gray100);
+    padding: var(--xs) 0;
+}
+.lstPopupResult .lstBtns > button {
+    font-weight: normal;
+}
+.lstPopupResult .lstBtns > button:active {
+    font-weight: 600;
+}
+.lstPopupResult .lstBtns > button:not(:last-child):after {
+    content: '|';
+    margin-left: .5em;
+}
+
+.lstPopupResult .lstBtns {
+    gap: .5em;
+}

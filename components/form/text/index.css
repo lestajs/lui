@@ -1,0 +1,7 @@
+.lstUI .lstText {
+  padding: 0;
+}
+
+.lstText:empty{
+  display: none;
+}

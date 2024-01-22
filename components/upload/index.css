@@ -1,0 +1,78 @@
+.lstUpl {
+  position: relative;
+  display: flex;
+  border: 3px dotted var(--gray200);
+  height: 100%;
+  min-width: 20ch;
+}
+
+.lstUpl:before {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  height: 100%;
+  max-height: 55px;
+  aspect-ratio: 1;
+  background-color: var(--gray);
+  mask: url(upload-cloud.svg);
+  mask-size: cover;
+}
+.lstUplLd {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  background-color: var(--gray100);
+  height: 100%;
+  width: 0%;
+  transition: width .2s ease-in;
+}
+.lstUpl > div {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.lstUpl .lstErrItem {
+  color: var(--red);
+}
+.lstUpl .lstErrItem span {
+  color: var(--red);
+  opacity: .7;
+}
+
+.lstUpl.lstError {
+  border-color: var(--red);
+}
+.lstUplEl {
+  display: none;
+}
+.lstUplTxt {
+  font-size: var(--fs-xxs);
+  line-height: 1;
+  padding: .2em 0;
+  color: var(--gray400);
+}
+.lstUplTxt:empty {
+  display: none;
+}
+.lstUpl:has(input[disabled]) {
+  opacity: .7;
+}
+.lstUplActive {
+  border-color: var(--gray400);
+}
+.lstUploadCont {
+  gap: .5em;
+  padding: .2em 0;
+}
+.lstUploadCont div {
+  height: min-content;
+  line-height: 1;
+}
+.lstUploadCont span {
+  padding: 0 .3em;
+  cursor: pointer;
+}

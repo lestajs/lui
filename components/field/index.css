@@ -1,0 +1,22 @@
+.lstFieldError {
+  border-color: var(--red);
+}
+
+.lstUI .lstField:not([contenteditable]) {
+  background-color: var(--gray);
+}
+
+.lstField {
+  font-family: inherit;
+  font-size: inherit;
+  padding-block: 0;
+  padding-inline: 0;
+  line-height: normal;
+  min-width: 20ch;
+  text-rendering: auto;
+  max-width: 100%;
+}
+.lstField:empty:after {
+  content: '\200B';
+  display: block;
+}
