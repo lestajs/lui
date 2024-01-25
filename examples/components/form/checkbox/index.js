@@ -14,13 +14,16 @@ const component = {
   nodes() {
     return {
       btn: {
-        onclick: () => this.proxy.value = !this.proxy.value
+        onclick: () => this.proxy.value = !this.proxy.value // this.node.example1.method.set(true)
       },
       example1: {
         component: {
           src: checkbox,
           proxies: {
             value: () => this.proxy.value
+          },
+          methods: {
+            action: (n, v) => console.log(v)
           }
         }
       }

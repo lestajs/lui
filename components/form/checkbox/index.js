@@ -29,6 +29,9 @@ export default {
       lstCheckbox: {
         _attr: {
           size: this.param.size
+        },
+        _class: {
+          lstError: () => this.proxy.error
         }
       },
       lstCheckboxInp: {

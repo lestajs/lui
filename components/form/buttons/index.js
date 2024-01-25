@@ -37,19 +37,22 @@ export default {
         onclick: (event) => {
           if (event.target.closest('.lstBtns > button')) {
             const index = +event.target.closest('.lstBtns > button').dataset.index - 1
-            const buttons = this.param.options.buttons || this.proxy.value
-            this.method.change && this.method.change(buttons[index], index)
+            const buttons = this.param.options.buttons
+            this.method.change?.(this.param.name, buttons[index], index)
           }
         }
       }
     }
   },
   methods: {
+    isActive(el) {
+      return Array.isArray(this.proxy.value) ? this.proxy.value.includes(el) : this.proxy.value === el
+    },
     render() {
-      const buttons = this.param.options.buttons || this.proxy.value
-      const isActive = (el) => Array.isArray(this.proxy.value) ? this.proxy.value.includes(el) : this.proxy.value === el
+      const buttons = this.param.options.buttons
       return buttons?.reduce((accum, el, index) => accum + `
-        <button class="${ isActive(el) ? 'l-active' : ''}" data-index="${index + 1}" size="${ this.param.size }" ${ this.proxy.disabled ? 'disabled' : '' }><span>${el}</span></button>`, '')
+        <button class="${ this.method.isActive(el) ? 'l-active' : ''}" data-index="${index + 1}" size="${ this.param.size }" ${ this.proxy.disabled ? 'disabled' : '' }><span>${el}</span></button>
+        `, '')
     },
     update(v) {
       this.proxy.value = v

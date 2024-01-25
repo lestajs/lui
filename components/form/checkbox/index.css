@@ -38,6 +38,9 @@
   justify-content: center;
   align-items: center;
 }
+.lstError .lstCheckmark {
+  border-color: var(--red);
+}
 
 .lstCheckbox input:checked ~ .lstCheckmark {
   border: 0;
