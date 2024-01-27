@@ -7,14 +7,17 @@ const root = document.querySelector('#root')
 const app = createApp()
 
 const component = {
-  template: `<div class="example1"></div><button class="btn">toggle</button>`,
+  template: `<div class="example1"></div><button class="btn"></button>`,
   proxies: {
     value: false
   },
   nodes() {
     return {
       btn: {
-        onclick: () => this.proxy.value = !this.proxy.value // this.node.example1.method.set(true)
+        textContent: () => this.proxy.value ? 'Unchecked' : 'Checked',
+        onclick: () => {
+          this.proxy.value = !this.proxy.value
+        } // this.node.example1.method.set(true)
       },
       example1: {
         component: {
