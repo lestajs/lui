@@ -11,12 +11,12 @@ export default {
   directives: { _attr },
   props: {
     proxies: {
-      value: {},
-      disabled: {},
-      error: {}
+      value: { type: 'boolean' },
+      disabled: { type: 'boolean' },
+      error: { type: 'boolean' }
     },
     params: {
-      name: { default: '' },
+      name: { default: '', },
       size: { default: 'medium' },
       text: {}
     },
