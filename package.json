@@ -7,7 +7,7 @@
     "test": "cypress run",
     "cypress": "cypress open",
     "checkbox": "parcel ./examples/components/form/checkbox/index.html",
-    "radio": "parcel ./examples/components/form/radio/index.html"
+    "accordion": "parcel ./examples/components/accordion/index.html"
   },
   "author": "",
   "license": "MIT",

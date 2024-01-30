@@ -1,32 +1,34 @@
-# checkbox
+# Checkbox
+
 ## Props
+
 ### proxies
 |Name|Type|Description|Default|
 |-|-|-|-|
-|value|any|Отмечает или убирает отметку с чекбокса|—|
-|disabled|any|Делает чекбкос недоступным для пользователя|—|
-|error|any|Помечает чекбокс ошибочным при помощи CSS|—|
+|value|boolean|Значение checked у компонента|false|
+|disabled|boolean|Состояние компонента доступен / недоступен|false|
+|error|boolean|Состояние ошибки у компонента|false|
 
 ### params
 |Name|Type|Description|Default|
 |-|-|-|-|
-|name|string|Задаёт имя чекбокса|—|
-|size|'small'/'medium'/'large'<br>string|Задаёт визуальный размер чекбокса при помощи CSS|medium|
-|text|string|Задаёт текст чекбокса|—|
+|name|string|Имя компонента|—|
+|size|string: small/medium/large|Визуальный размер компонента|medium|
+|text|string|Надпись у компонента|—|
 
 ### methods
-|Name|Type|Description|Default|
-|-|-|-|-|
-|action|function|Приводит в действие функцию, описываемую в методе, после взаимодействия с чекбоксом|—|
+|Name|Description|Parameters|
+|-|-|-|
+|action|Ловит действие компонента| (имя компонента, значение компонента)
 
-## Component methods
-|Name|Type|Description|Default|
-|-|-|-|-|
-|set|any|Внешний метод, реактивно задающий value указанному компоненту|this.proxy.value|
+
+## External methods
+### set
+Устанавливает новое значение для "value" в компоненте компонента. Метод доступен, как свойство объекта узла
 
 ```js
-this.node.example.method.set(true)
-```
-```js
-this.node.example.method.set(false)
+/**
+ * @param { boolean } значение для прокси в компоненте.
+ */
+this.node['имя узла'].method.set(true)
 ```

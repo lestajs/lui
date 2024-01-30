@@ -1,0 +1,50 @@
+.lstAccordion {
+    width: 300px;
+}
+.lstAccordion > button {
+    background-color: transparent;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: .5em 0;
+    border-bottom: 1px solid var(--gray200);
+}
+.lstAccordion > button span {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.l-arrow:before {
+    content: "";
+    border-top: 2px solid;
+    border-right: 2px solid;
+    width: .6em;
+    height: .6em;
+    display: block;
+}
+.lstAccordion > button i:before {
+    rotate: 135deg
+}
+.lstAccordion.l-active > button i:before {
+    rotate: -45deg
+}
+.lstAccordion > button .l-arrow{
+    margin: 1px 5px;
+    width: 8px;
+    height: 8px;
+}
+.lstAccordion > button .l-arrow:before{
+    border-color: var(--gray400);
+}
+.lstAccordionWr {
+    display: grid;
+    grid-template-rows: 1fr;
+    transition: grid-template-rows .4s;
+}
+.lstAccordionWr[hidden] {
+    display: grid !important;
+    grid-template-rows: 0fr;
+}
+.lstAccordionContent {
+    overflow: hidden;
+}

@@ -22,6 +22,7 @@ const component = {
   <div class="l-fx l-gap">
     <button class="btn1"></button>
     <button class="btn2"></button>
+    <button class="btn3"></button>
   </div>`,
   proxies: {
     value: false,
@@ -123,6 +124,17 @@ const component = {
             action: () => {
               this.proxy.error = !this.proxy.error
             }
+          }
+        }
+      },
+      btn3: {
+        component: {
+          src: button,
+          proxies: {
+            value: 'Checked'
+          },
+          methods: {
+            action: () => this.node.example5.method.set(true)
           }
         }
       }
