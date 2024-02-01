@@ -35,6 +35,7 @@ export default {
         }
       },
       lstCheckboxInp: {
+        name: this.param.name,
         checked: () => this.proxy.value,
         disabled: () => this.proxy.disabled,
         onchange: (event) => {
