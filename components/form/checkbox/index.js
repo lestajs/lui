@@ -38,10 +38,7 @@ export default {
         name: this.param.name,
         checked: () => this.proxy.value,
         disabled: () => this.proxy.disabled,
-        onchange: (event) => {
-          this.proxy.value = event.target.checked
-          this.method.action?.(this.param.name, event.target.checked)
-        }
+        onchange: (event) => this.method.set(event.target.checked)
       },
       lstCheckboxText: {
         _text: () => this.param.text ?? ''
@@ -51,6 +48,7 @@ export default {
   methods: {
     set(v) {
       this.proxy.value = v
+      this.method.action?.(this.param.name, v)
     }
   }
 }

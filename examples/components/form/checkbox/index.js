@@ -17,6 +17,7 @@ const component = {
     <div class="example3"></div>
     <div class="example4"></div>
   </div>
+  <div class="result"></div>
   <hr>
   <div class="example5"></div>
   <div class="l-fx l-gap">
@@ -25,10 +26,11 @@ const component = {
     <button class="btn3"></button>
   </div>`,
   proxies: {
-    value: false,
     disabled: false,
     mainValue: false,
-    error: false
+    valueTest: false,
+    error: false,
+    result: '',
   },
   nodes () {
     return {
@@ -39,7 +41,6 @@ const component = {
             value: () => this.proxy.mainValue
           },
           params: {
-            name: '',
             text: 'Select all options'
           },
           methods: {
@@ -54,11 +55,12 @@ const component = {
             value: () => this.proxy.mainValue
           },
           params: {
-            size: () => 'small',
-            text: () => 'Option A'
+            name: 'small',
+            size: 'small',
+            text: 'Small size'
           },
           methods: {
-          
+            action: this.method.setResult
           }
         }
       },
@@ -69,11 +71,12 @@ const component = {
             value: () => this.proxy.mainValue
           },
           params: {
-            size: () => 'small',
-            text: () => 'Option B'
+            name: 'medium',
+            size: 'medium',
+            text: 'Medium size'
           },
           methods: {
-          
+            action: this.method.setResult
           }
         }
       },
@@ -84,20 +87,31 @@ const component = {
             value: () => this.proxy.mainValue
           },
           params: {
-            size: () => 'small',
-            text: () => 'Option C'
+            name: 'large',
+            size: 'large',
+            text: 'Large size'
+          },
+          methods: {
+            action: this.method.setResult
           }
         }
+      },
+      result: {
+        textContent: () => 'Last action: ' + this.proxy.result
       },
       example5: {
         component: {
           src: checkbox,
           proxies: {
+            value: () => this.proxy.valueTest,
             disabled: () => this.proxy.disabled,
             error: () => this.proxy.error
           },
           params: {
-            text: () => 'Test of disable'
+            text: () => 'Test of change'
+          },
+          methods: {
+            action: () => this.proxy.valueTest = !this.proxy.valueTest
           }
         }
       },
@@ -118,7 +132,8 @@ const component = {
         component: {
           src: button,
           proxies: {
-            value: () => this.proxy.error ? 'No Error' : 'Error'
+            value: () => this.proxy.error ? 'No Error' : 'Error',
+            disabled: () => this.proxy.valueTest
           },
           methods: {
             action: () => {
@@ -131,13 +146,18 @@ const component = {
         component: {
           src: button,
           proxies: {
-            value: 'Checked'
+            value: 'Checked (external method)'
           },
           methods: {
             action: () => this.node.example5.method.set(true)
           }
         }
       }
+    }
+  },
+  methods: {
+    setResult(n, v) {
+      this.proxy.result = n + '-' + v
     }
   }
 }
