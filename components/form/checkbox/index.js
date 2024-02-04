@@ -16,7 +16,7 @@ export default {
       error: { type: 'boolean' }
     },
     params: {
-      name: { default: '', },
+      name: { default: '' },
       size: { default: 'medium' },
       text: {}
     },

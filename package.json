@@ -17,7 +17,9 @@
     }
   },
   "devDependencies": {
-    "parcel": "^2.11.0",
-    "cypress": "^13.6.3"
+    "cypress": "^13.6.3",
+    "eslint": "^8.56.0",
+    "eslint-plugin-html": "^7.1.0",
+    "parcel": "^2.11.0"
   }
 }

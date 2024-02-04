@@ -9,7 +9,6 @@ const app = createApp()
 
 const component = {
   template: `
-  
   <hr>
   <div class="example1"></div>
   <div class="l-container">
@@ -21,18 +20,18 @@ const component = {
   <hr>
   <div class="example5"></div>
   <div class="l-fx l-gap">
-    <button class="btn1"></button>
-    <button class="btn2"></button>
-    <button class="btn3"></button>
+    <div class="btn1"></div>
+    <div class="btn2"></div>
+    <div class="btn3"></div>
   </div>`,
   proxies: {
     disabled: false,
     mainValue: false,
     valueTest: false,
     error: false,
-    result: '',
+    result: ''
   },
-  nodes () {
+  nodes() {
     return {
       example1: {
         component: {
@@ -72,7 +71,6 @@ const component = {
           },
           params: {
             name: 'medium',
-            size: 'medium',
             text: 'Medium size'
           },
           methods: {
@@ -162,4 +160,4 @@ const component = {
   }
 }
 
-app.mount(component, root, {params: {}})
+app.mount(component, root, { params: {}})
