@@ -16,7 +16,9 @@ export default {
   props: {
     params:{
       tabletWidth: {},
-      scrollContainer: {},
+      scrollContainer: {
+        ignore: true
+      },
     },
     proxies: {
       opened: {

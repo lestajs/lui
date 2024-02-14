@@ -33,7 +33,7 @@ export default {
           'l-fx-rev': this.param.options.iconPosition === 'end'
         },
         _attr: {
-          size: this.param.size,
+          size: this.param.size
         },
         name: this.param.name,
         type: this.param.type,

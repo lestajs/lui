@@ -20,7 +20,7 @@ export default {
       name: { default: '' },
       size: { default: 'small' },
       text: {},
-      options: { default: {} }
+      options: { default: {}}
     },
     methods: {
       change: {},

@@ -40,7 +40,8 @@ const component = {
             value: () => this.proxy.mainValue
           },
           params: {
-            text: 'Select all options'
+            text: 'Select all options',
+            name: 'jhkhj'
           },
           methods: {
             action: (n, v) => this.proxy.mainValue = !this.proxy.mainValue

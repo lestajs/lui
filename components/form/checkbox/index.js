@@ -11,14 +11,16 @@ export default {
   directives: { _attr },
   props: {
     proxies: {
-      value: { type: 'boolean' },
-      disabled: { type: 'boolean' },
-      error: { type: 'boolean' }
+      value: 'boolean',
+      disabled: 'boolean',
+      error: 'boolean'
     },
     params: {
-      name: { default: '' },
+      name: 'string',
       size: { default: 'medium' },
-      text: {}
+      text: {
+        required: true
+      }
     },
     methods: {
       action: {}

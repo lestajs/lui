@@ -6,7 +6,10 @@
   "scripts": {
     "test": "cypress run",
     "cypress": "cypress open",
-    "checkbox": "parcel ./examples/components/form/checkbox/index.html",
+    "button": "parcel ./examples/components/button/index.html",
+    "buttons": "parcel ./examples/components/buttons/index.html",
+    "checkbox": "parcel ./examples/components/checkbox/index.html",
+    "input": "parcel ./examples/components/input/index.html",
     "accordion": "parcel ./examples/components/accordion/index.html"
   },
   "author": "",
