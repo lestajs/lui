@@ -12,11 +12,11 @@
     --max-width-large: 1920px;
     --max-width-medium: 1024px;
     --max-width-small: 900px;
-    --fs-xxs: 14px;
-    --fs-xs: max(15px, calc(.8 * var(--unit)));
+    --fs-xxs: 15px;
+    --fs-xs: max(15px, calc(.75 * var(--unit)));
     --fs-s: calc(1 * var(--unit));
-    --fs-m: calc(1.4 * var(--unit));
-    --fs-l: calc(2.6 * var(--unit));
+    --fs-m: calc(1.3 * var(--unit));
+    --fs-l: calc(2.1 * var(--unit));
     --fs-xl: calc(3 * var(--unit));
     --fs-xxl: calc(3.6 * var(--unit));
     --xxs: calc(.6 * var(--unit));
@@ -27,14 +27,14 @@
     --xl: calc(8 * var(--unit));
     --bg-primary: white;
     --thin: #e5e5e5;
-    --light-gray: #ddd;
+    --light-gray: #00000008;
     --w-col: 500px;
     --gray: #0000000c;
     --gray100: #00000012;
     --gray200: #00000020;
     --gray300: #00000030;
     --gray400: #0000005e;
-    --gray500: #00000060;
+    --gray500: #00000082;
     --gray700: #000000cf;
     --black: #000000e3;
     --green: #3fcd6b;
@@ -99,7 +99,6 @@
 
 .lstUI a {
     text-decoration: none;
-    display: inline-block;
     color: inherit;
     cursor: pointer;
 }
@@ -109,21 +108,10 @@
     margin-bottom: 1em;
 }
 
-.lstUI ul {
-    width: 100%;
-    grid-template-columns: repeat(auto-fill, minmax(16ch, 1fr));
-    display: grid;
-}
-
-.lstUI li {
-    list-style-type: none;
-    min-width: 16ch;
-}
-
 .lstUI button {
     display: flex;
     box-sizing: border-box;
-    background-color: var(--gray);
+    background-color: transparent;
     color: inherit;
     align-items: center;
     cursor: pointer;
@@ -162,7 +150,7 @@
  }
 
 .lstUI [size="large"] {
-    font-size: var(--fs-s);
+    font-size: var(--fs-xs);
     padding: 0.66em 1em;
 }
 
@@ -208,7 +196,7 @@
 .l-jc-end {
     justify-content: flex-end;
 }
-.l-jc-center{
+.l-jc-c {
     justify-content: center;
 }
 .l-jc-sb {
@@ -249,7 +237,6 @@
     display: none;
 }
 
-
 .l-container {
     position: relative;
     padding-left: var(--ss);
@@ -266,22 +253,4 @@
     max-width: var(--max-width);
     margin-left: auto;
     margin-right: auto;
-}
-
-.lstClose {
-    position: relative;
-    margin: 0 0 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0.8;
-    cursor: pointer;
-    width: max-content;
-}
-.lstClose:before {
-    content: '✕';
-    display: inline-block;
-}
-.lstClose:hover {
-    opacity: 1;
 }

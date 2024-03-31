@@ -1,0 +1,16 @@
+.lstProgress {
+  background-color: var(--gray300);
+  width: 136px;
+  height: 3px;
+  position: relative;
+}
+.lstProgress:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--black);
+  width: var(--value);
+  height: 100%;
+  transition: width .4s ease-in;
+}

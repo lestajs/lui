@@ -3,14 +3,31 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "targets": {
+    "esm": {
+      "context": "browser",
+      "outputFormat": "esmodule",
+      "sourceMap": false,
+      "optimize": true,
+      "distDir": "./bundlers",
+      "isLibrary": true
+    }
+  },
   "scripts": {
     "test": "cypress run",
     "cypress": "cypress open",
     "button": "parcel ./examples/components/button/index.html",
     "buttons": "parcel ./examples/components/buttons/index.html",
+    "chip": "parcel ./examples/components/chip/index.html",
     "checkbox": "parcel ./examples/components/checkbox/index.html",
     "input": "parcel ./examples/components/input/index.html",
-    "accordion": "parcel ./examples/components/accordion/index.html"
+    "inputNumber": "parcel ./examples/components/inputNumber/index.html",
+    "tags": "parcel ./examples/components/tags/index.html",
+    "tabs": "parcel ./examples/components/tabs/index.html",
+    "accordion": "parcel ./examples/components/accordion/index.html",
+    "progress": "parcel ./examples/components/progress/index.html",
+    "searchBar": "parcel ./examples/components/searchBar/index.html",
+    "searchBar:build": "parcel build ./components/searchBar/index.js --target"
   },
   "author": "",
   "license": "MIT",
@@ -20,9 +37,12 @@
     }
   },
   "devDependencies": {
+    "assert": "^2.1.0",
+    "console-browserify": "^1.2.0",
     "cypress": "^13.6.3",
     "eslint": "^8.56.0",
     "eslint-plugin-html": "^7.1.0",
-    "parcel": "^2.11.0"
+    "parcel": "^2.11.0",
+    "util": "^0.12.5"
   }
 }

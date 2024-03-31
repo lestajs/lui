@@ -10,14 +10,14 @@ export default {
     proxies: {
       value: {},
       disabled: {},
-      error: {},
+      error: {}
     },
     params: {
-      type: { default: 'text'},
+      type: { default: 'text' },
       name: { default: '' },
       size: { default: 'small' },
       text: {},
-      options: { default: {} }
+      options: { default: {}}
     },
     methods: {
       change: {}

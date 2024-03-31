@@ -1,23 +1,9 @@
-const _classes = {
-  update: (node, options, key) => {
-    const value = typeof options[key] === 'function' ? options[key]() : options[key]
-    requestAnimationFrame((time) => {
-      if (value) {
-        requestAnimationFrame((time) => {
-          node.classList.add(key)
-        })
-      } else {
-        requestAnimationFrame((time) => {
-          node.classList.remove(key)
-        })
-      }
-    })
-  }
+const _classNext = {
+  update: (node, value, key) => requestAnimationFrame(() => value ? node.classList.add(key) : node.classList.remove(key))  
 }
 
 const _attr = {
-  update: (node, options, key) => {
-    const value = typeof options[key] === 'function' ? options[key]() : options[key]
+  update: (node, value, key) => {
     if (typeof value === 'boolean') {
       if (value) {
         node.setAttribute(key, '')
@@ -28,16 +14,16 @@ const _attr = {
 
 const _outside = {
   stop: (event) => event.stopPropagation(),
-  create: (node, options, directive) => {
+  create: (node, options) => {
     if (typeof options.change === 'function') {
-      if (options.stop) node.addEventListener('click', directive.stop)
+      if (options.stop) node.addEventListener('click', this.stop)
       document.addEventListener('click', options.change)
     }
   },
-  destroy: (node, options, directive) => {
-    if (options.stop) node.removeEventListener('click', directive.stop)
+  destroy: (node, options) => {
+    if (options.stop) node.removeEventListener('click', this.stop)
     document.removeEventListener('click', options.change)
   }
 }
 
-export { _classes, _attr, _outside }
+export { _classNext, _attr, _outside }

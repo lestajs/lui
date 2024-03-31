@@ -1,7 +1,10 @@
 /*eslint no-undef: 0*/
 
 describe('LUI', () => {
-  beforeEach(() => cy.visit('http://localhost:1234/'))
+  beforeEach(() => {
+    cy.intercept('https://cdn.jsdelivr.net/gh/lestajs/core@latest/dist/lesta.global.js')
+    cy.visit('http://localhost:1234/')
+  })
   it('Component display check', () => {
     cy.get('.lstCheckbox').eq(0).should('be.visible')
   })

@@ -4,10 +4,20 @@ module.exports = {
     sourceType: 'module',
     ecmaVersion: 'latest'
   },
-  env: {
-    browser: true,
-    node: true
-  },
+  overrides: [
+    {
+      env: {
+        browser: true,
+        node: true
+      },
+      files: [
+        '.eslintrc.{js,cjs}'
+      ],
+      parserOptions: {
+        sourceType: 'script'
+      }
+    }
+  ],
   extends: 'eslint:recommended',
   plugins: ['html'],
   rules: {
@@ -157,7 +167,11 @@ module.exports = {
       'after': true
     }],
     'space-before-blocks': [2, 'always'],
-    'space-before-function-paren': [2, 'never'],
+    'space-before-function-paren': [2, {
+      anonymous: 'never',
+      named: 'never',
+      asyncArrow: 'always'
+    }],
     'space-in-parens': [2, 'never'],
     'space-infix-ops': 2,
     'space-unary-ops': [2, {

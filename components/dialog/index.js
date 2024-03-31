@@ -55,17 +55,19 @@ export default {
         onclick: () => this.method.onclose()
       },
       lstDialogHd: {
-        _text: () => this.param.title,
+        _text: () => this.param.title
       },
       lstDialogTxt: {
-        _text: () => this.param.text,
+        _text: () => this.param.text
       },
       lstDialogReject: {
         component: {
           induce: () => this.param.reject,
           src: button,
+          proxies: {
+            value: this.param.reject.text
+          },
           params: {
-            text: () => this.param.reject.text,
             type: () => this.param.reject.type || 'text'
           },
           methods: {
@@ -80,8 +82,10 @@ export default {
         component: {
           induce: () => this.param.allow,
           src: button,
+          proxies: {
+            value: this.param.allow.text
+          },
           params: {
-            text: () => this.param.allow.text,
             type: () => this.param.allow.type || 'text'
           },
           methods: {
@@ -91,7 +95,7 @@ export default {
             }
           }
         }
-      },
+      }
     }
   },
   methods: {
